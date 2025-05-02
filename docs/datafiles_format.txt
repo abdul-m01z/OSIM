@@ -1,0 +1,35 @@
+user.txt:
+    <username>|<hashed_password>|<role>
+
+    possible roles:
+      - 1=junior
+      - 2=employee
+      - 3=manager
+      - 4=director
+      - 5=executive
+
+
+
+tasks.txt:
+    <task_id>|<title>|<status>|<creator>|<assignee>|<priority>|<created_timestamp>|<ttl_in_seconds>
+
+    possible statuses:
+      - 1=created
+      - 2=assigned
+      - 3=inprogress
+      - 4=completed
+      - 5=expired
+
+    possible priorities:
+      - 1=low
+      - 2=medium
+      - 3=high
+
+
+inbox/<username>.txt:
+    <timestamp>|<type>|<sender>|<encrypted_message_content>
+
+    possible types:
+      - 1=info
+      - 2=private
+      - 3=alert
