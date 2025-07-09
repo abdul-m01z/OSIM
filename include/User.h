@@ -1,21 +1,31 @@
 #ifndef USER_H
 #define USER_H
 
+#include <string>
 #include <iostream>
 using namespace std;
 
 class User {
 protected:
     string username;
-    string passwordHash[65];
-    int clearance;
+    int role;
+    string hashedPass; 
 
-public:
-    User(string uname = "", string pass = "");
-    string getUsername() const;
-    string getHashedPassword() const;
-    int getClearanceLevel() const;
-    virtual ~User() {}
+    bool isValidUsername(const string& uname); 
+
+    public:
+        void loadUserData(const string& uname); 
+        User(string uname = "",  int r = 0);
+        string getUsername() const;
+        int getRole() const;
+        string getHashedPass() const; 
+
+        void setUsername(string uname);
+        void setRole(int r);
+
+        virtual void displayMenu() const = 0;
+
+        virtual ~User() {}
 };
 
 #endif

@@ -1,5 +1,5 @@
 user.txt:
-    <username>|<hashed_password>|<role>
+    <username>|<hashed_password>|<role>|<hashed_favourite_movie>
 
     possible roles:
       - 1=junior
@@ -8,6 +8,10 @@ user.txt:
       - 4=director
       - 5=executive
 
+    Note: use customHash() for hashing in "Auth" header file
+    Note: favourite movie is a string that can be used to recover the user's password
+
+    Default password for all users is "Fast@Students321" and default favourite movie is "puss_n_boots_the_last_wish" (peak)
 
 
 tasks.txt:
@@ -33,3 +37,32 @@ inbox/<username>.txt:
       - 1=info
       - 2=private
       - 3=alert
+
+    for encrypting use xorEncryptHex() in "Messaging" header file which encrypts message via XOR using the user's hashed password as repeating key and then converts the output to hex to avoid unprintable characters.
+
+notifications.txt:
+    <timestamp>|<type>|<message>
+
+    possible types:
+      - 1=warning
+      - 2=emergency
+
+
+performance_report.txt:
+    <username>|<score>
+
+    Note: Everyone starts at 0 and the following actions affect the score:
+
+    - Completing a low priority task gives +5 points
+    - Completing a medium priority task gives +10 points
+    - Completing a high priority task gives +15 points
+    - Expiring a low priority task gives -5 points
+    - Expiring a medium priority task gives -10 points
+    - Expiring a high priority task gives -15 points
+    - Sending a message gives +1 point
+
+    (These values are in constants.h and can be modified anytime)
+
+
+audit.txt:
+    <timestamp>|<username>|<action>|<details>|<status>
