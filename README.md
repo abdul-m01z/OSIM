@@ -70,8 +70,10 @@ and role-sensitive communication.
    ```bash
     ./osim
     ```
+5. For demo purposes all the users in `users.txt` have same password `Fast@Students321` and `puss_n_boots_the_last_wish` set as their favorite movie forgot question answer.
 
 ## Notes
+
 - The ASCII art styling and colors dont seem to work on some windows terminals so try running in WSL or Linux for best experience
 - The code is currently not commented although easy to understand but still I might add them later
 - The structure for the data files is documented in `docs/datailes_format.txt`
