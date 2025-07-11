@@ -49,7 +49,6 @@ bool isStrongPassword(const string& password) {
 int main() {
     int choice;
     bool running = true;
-    system("clear");
     while(running) {
         cout << endl;
         cout << " ██████╗ ███████╗██╗███╗   ███╗" << endl;
